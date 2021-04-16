@@ -1,25 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from 'react';
+// Don't modify this line. It is here to make React
+// work correctly in this exercise environment.
+const useState = React.useState;
 
-export default App;
+// don't change the Component name "App"
+export default function App() {
+  
+  const [counter,setCounter] = useState(null);
+
+    const onButtonClick = () => {
+   console.log('entro')
+      setCounter(counter + 1);      
+    };
+    
+    return (
+        <div>
+            <button onClick={onButtonClick}>Click Me!</button>
+            
+            <h1>Current Count: {counter}</h1>
+        </div>
+    );
+}
